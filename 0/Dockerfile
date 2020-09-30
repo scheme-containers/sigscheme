@@ -5,7 +5,7 @@ RUN apt-get update && apt-get -y --no-install-recommends install \
  && rm -rf /var/lib/apt/lists/*
 WORKDIR /build
 COPY checksum checksum
-ADD https://github.com/uim/sigscheme/releases/download/0.9.0/sigscheme-0.9.0.tar.gz \
+ADD https://github.com/uim/sigscheme/releases/download/0.9.1/sigscheme-0.9.1.tar.gz \
   sigscheme.tar.gz
 RUN sha256sum sigscheme.tar.gz && sha256sum -c checksum
 RUN mkdir sigscheme && tar -C sigscheme --strip-components 1 -xf sigscheme.tar.gz
